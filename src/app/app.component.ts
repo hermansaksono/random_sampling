@@ -21,11 +21,12 @@ export class AppComponent {
     meta.addTag({name: 'twitter:image', content: this.imgUrl});
     meta.addTag({name: 'twitter:image:alt', content: this.imgAlt});
     // Facebook metadata
-    meta.addTag({name: 'og:type', content: 'article'});
+    meta.addTag({name: 'og:type', content: 'website'});
     meta.addTag({name: 'og:url', content: 'https://hermansaksono.github.io/random_sampling/'});
     meta.addTag({name: 'og:title', content: this.title});
     meta.addTag({name: 'og:description', content: this.desc});
     meta.addTag({name: 'og:image', content: this.imgUrl});
     meta.addTag({name: 'og:site_name', content: 'Random sampling'});
+    meta.addTag({name: 'fb:app_id', content: 'https://hermansaksono.github.io/random_sampling/'});
   }
 }
