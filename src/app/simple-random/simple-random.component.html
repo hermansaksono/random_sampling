@@ -4,6 +4,8 @@
   Misalnya untuk survei dan hitung cepat (<i>quickcount</i>).
 </p>
 <h2>1. Permasalahan</h2>
+<img src="assets/apple.png" />
+<img src="assets/orange.png" />
 <p>
   Ada seekor pinguin bernama Wati. Wati Pinguin memesan {{ populationSize }} buah-buahan yang terdiri dari
   {{ applePopulation }} apel dan {{ orangePopulation }} jeruk. Setelah pesanannya datang, ternyata apel dan jeruknya
@@ -54,16 +56,19 @@
     <th>Buah</th>
     <th>Jumlah sampel</th>
     <th>Persen</th>
+    <th>Persen seharusnya</th>
   </tr>
   <tr>
     <td>Apel</td>
     <td>{{ proportionFrom20Samples[0] }}</td>
     <td>{{ percentFrom20Samples[0] }}%</td>
+    <td>{{ applePercent }}%</td>
   </tr>
   <tr>
     <td>Jeruk</td>
     <td>{{ proportionFrom20Samples[1] }}</td>
     <td>{{ percentFrom20Samples[1] }}%</td>
+    <td>{{ orangePercent }}%</td>
   </tr>
 </table>
 <p><b>Catatan:</b> perhatikan bahwa persentase apel dan jeruk berubah-ubah terus dan hasilnya beda jauh.</p>
@@ -81,16 +86,19 @@
     <th>Buah</th>
     <th>Jumlah sampel</th>
     <th>Persen</th>
+    <th>Persen seharusnya</th>
   </tr>
   <tr>
     <td>Apel</td>
     <td>{{ proportionFrom100Samples[0] }}</td>
     <td>{{ percentFrom100Samples[0] }}%</td>
+    <td>{{ applePercent }}%</td>
   </tr>
   <tr>
     <td>Jeruk</td>
     <td>{{ proportionFrom100Samples[1] }}</td>
     <td>{{ percentFrom100Samples[1] }}%</td>
+    <td>{{ orangePercent }}%</td>
   </tr>
 </table>
 <p><b>Catatan:</b> perhatikan bahwa hasil persentasenya berubah-ubah tapi tidak beda jauh.</p>
@@ -108,16 +116,19 @@
     <th>Buah</th>
     <th>Jumlah sampel</th>
     <th>Persen</th>
+    <th>Persen seharusnya</th>
   </tr>
   <tr>
     <td>Apel</td>
     <td>{{ proportionFrom1000Samples[0] }}</td>
     <td>{{ percentFrom1000Samples[0] }}%</td>
+    <td>{{ applePercent }}%</td>
   </tr>
   <tr>
     <td>Jeruk</td>
     <td>{{ proportionFrom1000Samples[1] }}</td>
     <td>{{ percentFrom1000Samples[1] }}%</td>
+    <td>{{ orangePercent }}%</td>
   </tr>
 </table>
 <p>

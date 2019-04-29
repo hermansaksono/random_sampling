@@ -1,10 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-98237-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-98237-2');
+</script>
+
 <div class="wrapper">
   <h1>
     {{ title }}
   </h1>
 <app-simple-random></app-simple-random>
-
+<hr />
+<h2>Dibuat oleh</h2>
+  <ul>
+    <li>Herman Saksono (hsaksono@ccs.neu.edu)</li>
+    <li>Arkhadi Pustaka(arkhadipustaka@gmail.com)</li>
+  </ul>
 
 <router-outlet></router-outlet>
 </div>
