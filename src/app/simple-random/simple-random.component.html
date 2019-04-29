@@ -3,7 +3,7 @@
   Di sini Anda akan mencoba cara kerja sampel acak (random sampling) yang biasa digunakan untuk statistik.
   Misalnya untuk survei dan hitung cepat (<i>quickcount</i>).
 </p>
-<h2>1. Sekilas Populasi</h2>
+<h2>1. Permasalahan</h2>
 <p>
   Ada seekor pinguin bernama Wati. Wati Pinguin memesan {{ populationSize }} buah-buahan yang terdiri dari
   {{ applePopulation }} apel dan {{ orangePopulation }} jeruk. Setelah pesanannya datang, ternyata apel dan jeruknya
@@ -40,13 +40,15 @@
   </tr>
 </table>
 
+<hr />
+
 <h2>2. Sampel Kecil</h2>
 <p>
-  Menghitung dengan 20 sampel acak ({{ 100 * 20/populationSize }}% dari populasi). Acak artinya Wati tidak memilih-milih sampel mana yang diambil.
-  Pencet tombol di bawah ini untuk mengambil 20 sampel acak.
+  Menghitung dengan 20 sampel acak ({{ 100 * 20/populationSize }}% dari seluruh buah-buahan). Acak artinya Wati tidak memilih-milih sampel mana yang diambil.
+  Pencet tombol di bawah ini untuk mengambil 20 sampel acak. Anda bisa pencet tombol itu berkali-kali.
 </p>
 <button (click)="onGet20Samples()">Ambil 20 sampel acak</button>
-<h3>Hasilnya</h3>
+<h3>Bagaimanakah hasilnya?</h3>
 <table>
   <tr>
     <th>Buah</th>
@@ -64,14 +66,16 @@
     <td>{{ percentFrom20Samples[1] }}%</td>
   </tr>
 </table>
+<p><b>Catatan:</b> perhatikan bahwa persentase apel dan jeruk berubah-ubah terus dan hasilnya beda jauh.</p>
 
+<hr />
 <h2>3. Sampel Sedang</h2>
 <p>
-  Menghitung dengan 100 sampel acak ({{ 100 * 100/populationSize }}% dari populasi). Acak artinya Wati tidak memilih-milih sampel mana yang diambil.
-  Pencet tombol di bawah ini untuk mengambil 100 sampel acak.
+  Sekarang kita menambah buah-buahan yang disampel. Mari menghitung dengan 100 sampel acak
+  ({{ 100 * 100/populationSize }}% dari seluruh buah-buahan).
 </p>
 <button (click)="onGet100Samples()">Ambil 100 sampel acak</button>
-<h3>Hasilnya</h3>
+<h3>Bagaimana hasilnya?</h3>
 <table>
   <tr>
     <th>Buah</th>
@@ -89,14 +93,16 @@
     <td>{{ percentFrom100Samples[1] }}%</td>
   </tr>
 </table>
+<p><b>Catatan:</b> perhatikan bahwa hasil persentasenya berubah-ubah tapi tidak beda jauh.</p>
 
+<hr />
 <h2>4. Sampel Besar</h2>
 <p>
-  Menghitung dengan 1000 sampel acak ({{ 1000 * 100/populationSize }}% dari populasi). Acak artinya Wati tidak memilih-milih sampel mana yang diambil.
-  Pencet tombol di bawah ini untuk mengambil 100 sampel acak.
+  Mari kita perbanyak sampel buah-buahan yang diambil. Mari menghitung dengan 1000 sampel acak
+  ({{ 1000 * 100/populationSize }}% dari seluruh buah-buahan).
 </p>
 <button (click)="onGet1000Samples()">Ambil 1000 sampel acak</button>
-<h3>Hasilnya</h3>
+<h3>Bagaimana hasilnya?</h3>
 <table>
   <tr>
     <th>Buah</th>
@@ -114,3 +120,7 @@
     <td>{{ percentFrom1000Samples[1] }}%</td>
   </tr>
 </table>
+<p>
+  <b>Catatan:</b> perhatikan bahwa hasil persentasenya berubah-ubah tapi perbedaannya semakin mendekati persentase
+  yang sebenarnya (apel={{ applePercent }}%, jeruk={{ orangePercent }}%).
+</p>
