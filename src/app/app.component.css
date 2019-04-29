@@ -6,6 +6,7 @@ body {
     margin: 1em !important;
     font-family: Lato, Arial, Helvetica, sans-serif;
     color: #888;
+    touch-action: manipulation;
 }
 
 h1 {
