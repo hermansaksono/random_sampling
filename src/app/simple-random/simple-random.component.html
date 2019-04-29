@@ -43,6 +43,9 @@
     <td>100%</td>
   </tr>
 </table>
+<p>
+  Setelah ini, Anda akan mencoba sampel acak (random sampling).
+</p>
 
 <hr />
 
@@ -73,7 +76,9 @@
     <td>{{ orangePercent }}%</td>
   </tr>
 </table>
-<p><b>Catatan:</b> perhatikan bahwa persentase apel dan jeruk berubah-ubah terus dan hasilnya beda jauh.</p>
+<p>
+  <b>Catatan:</b> perhatikan bahwa persentase apel dan jeruk berubah-ubah terus dan hasilnya beda jauh. Bedanya bisa
+  hingga 22% lebih banyak atau lebih sedikit dari persen seharusnya.</p>
 
 <hr />
 <h2>3. Sampel Sedang</h2>
@@ -103,7 +108,8 @@
     <td>{{ orangePercent }}%</td>
   </tr>
 </table>
-<p><b>Catatan:</b> perhatikan bahwa hasil persentasenya berubah-ubah tapi tidak beda jauh.</p>
+<p><b>Catatan:</b> perhatikan bahwa hasil persentasenya berubah-ubah tapi tidak beda jauh. Bedanya bisa
+  hingga 10% lebih banyak atau lebih sedikit dari persen seharusnya.</p>
 
 <hr />
 <h2>4. Sampel Besar</h2>
@@ -135,7 +141,8 @@
 </table>
 <p>
   <b>Catatan:</b> perhatikan bahwa hasil persentasenya berubah-ubah tapi perbedaannya semakin mendekati persentase
-  yang sebenarnya (apel={{ applePercent }}%, jeruk={{ orangePercent }}%).
+  yang sebenarnya (apel={{ applePercent }}%, jeruk={{ orangePercent }}%). Bedanya bisa
+  hingga 3% lebih banyak atau lebih sedikit dari persen seharusnya.
 </p>
 
 <hr />
@@ -146,3 +153,8 @@
   <li>Berapakah jumlah sampel buah yang ideal?</li>
   <li>Seberapa perlukah kita menghitung kesemua 100.000 buah-buahan?</li>
 </ol>
+<p>
+  Pengambilan acak pada percobaan ini dihitung oleh komputer/smartphone Anda. Jadi, apel atau jeruk yang didapat
+  dalam percobaan ini adalah hasil komputasi komputer/smartphone Anda sendiri. Kode programnya
+  <a href="https://github.com/hermansaksono/random_sampling/blob/master/src/app/simple-random/simple-random.component.ts">bisa dilihat di sini</a>.
+</p>

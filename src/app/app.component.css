@@ -1,5 +1,6 @@
 /* Application-wide Styles */
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
 
 body {
     margin: 1em !important;
@@ -9,10 +10,10 @@ body {
 
 h1 {
     color: #473793;
-    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-family: Montserrat, Lato, Arial, Helvetica, sans-serif;
     font-size: 250%;
     text-align: left;
-    font-weight: bolder;
+    font-weight: 700;
 }
 
 p {
