@@ -15,7 +15,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid darkgray;
 }
 
 th {
@@ -23,9 +23,15 @@ th {
     padding: 0.3em 0.8em;
     font-size: 10pt;
     text-transform: uppercase;
+    border-bottom: 2px solid darkgray;
 }
 
 td {
     padding: 0.4em 0.8em;
     vertical-align: middle;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid darkgray;
 }
