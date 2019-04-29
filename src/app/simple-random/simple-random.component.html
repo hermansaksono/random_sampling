@@ -1,0 +1,116 @@
+
+<p>
+  Di sini Anda akan mencoba cara kerja sampel acak (random sampling) yang biasa digunakan untuk statistik.
+  Misalnya untuk survei dan hitung cepat (<i>quickcount</i>).
+</p>
+<h2>1. Sekilas Populasi</h2>
+<p>
+  Ada seekor pinguin bernama Wati. Wati Pinguin memesan {{ populationSize }} buah-buahan yang terdiri dari
+  {{ applePopulation }} apel dan {{ orangePopulation }} jeruk. Setelah pesanannya datang, ternyata apel dan jeruknya
+  dicampur menjadi satu. Wati tidak yakin dia mendapatkan {{ applePopulation }} apel dan {{ orangePopulation }} jeruk.
+</p>
+<p>
+  Awalnya, Wati hendak menghitung apel dan jeruknya satu-persatu. Namun, Ibu Wati yang profesor statistik menyarankan
+  Wati untuk memakai sampel acak (random sampling) saja. Dengan demikian, Wati cukup menghitung sebagian dari
+  {{ populationSize }} buah-buahan yang dia pesan
+</p>
+<p>
+  Singkatnya, apel dan jeruk yang dimiliki Wati adalah seperti ini.
+</p>
+<table>
+  <tr>
+    <th>Buah</th>
+    <th>Jumlah sampel</th>
+    <th>Persen</th>
+  </tr>
+  <tr>
+    <td>Apel</td>
+    <td>{{ applePopulation }}</td>
+    <td>{{ applePercent }}%</td>
+  </tr>
+  <tr>
+    <td>Jeruk</td>
+    <td>{{ orangePopulation }}</td>
+    <td>{{ orangePercent }}%</td>
+  </tr>
+  <tr>
+    <td>TOTAL</td>
+    <td>{{ populationSize }}</td>
+    <td>100%</td>
+  </tr>
+</table>
+
+<h2>2. Sampel Kecil</h2>
+<p>
+  Menghitung dengan 20 sampel acak ({{ 100 * 20/populationSize }}% dari populasi). Acak artinya Wati tidak memilih-milih sampel mana yang diambil.
+  Pencet tombol di bawah ini untuk mengambil 20 sampel acak.
+</p>
+<button (click)="onGet20Samples()">Ambil 20 sampel acak</button>
+<h3>Hasilnya</h3>
+<table>
+  <tr>
+    <th>Buah</th>
+    <th>Jumlah sampel</th>
+    <th>Persen</th>
+  </tr>
+  <tr>
+    <td>Apel</td>
+    <td>{{ proportionFrom20Samples[0] }}</td>
+    <td>{{ percentFrom20Samples[0] }}%</td>
+  </tr>
+  <tr>
+    <td>Jeruk</td>
+    <td>{{ proportionFrom20Samples[1] }}</td>
+    <td>{{ percentFrom20Samples[1] }}%</td>
+  </tr>
+</table>
+
+<h2>3. Sampel Sedang</h2>
+<p>
+  Menghitung dengan 100 sampel acak ({{ 100 * 100/populationSize }}% dari populasi). Acak artinya Wati tidak memilih-milih sampel mana yang diambil.
+  Pencet tombol di bawah ini untuk mengambil 100 sampel acak.
+</p>
+<button (click)="onGet100Samples()">Ambil 100 sampel acak</button>
+<h3>Hasilnya</h3>
+<table>
+  <tr>
+    <th>Buah</th>
+    <th>Jumlah sampel</th>
+    <th>Persen</th>
+  </tr>
+  <tr>
+    <td>Apel</td>
+    <td>{{ proportionFrom100Samples[0] }}</td>
+    <td>{{ percentFrom100Samples[0] }}%</td>
+  </tr>
+  <tr>
+    <td>Jeruk</td>
+    <td>{{ proportionFrom100Samples[1] }}</td>
+    <td>{{ percentFrom100Samples[1] }}%</td>
+  </tr>
+</table>
+
+<h2>4. Sampel Besar</h2>
+<p>
+  Menghitung dengan 1000 sampel acak ({{ 1000 * 100/populationSize }}% dari populasi). Acak artinya Wati tidak memilih-milih sampel mana yang diambil.
+  Pencet tombol di bawah ini untuk mengambil 100 sampel acak.
+</p>
+<button (click)="onGet1000Samples()">Ambil 1000 sampel acak</button>
+<h3>Hasilnya</h3>
+<table>
+  <tr>
+    <th>Buah</th>
+    <th>Jumlah sampel</th>
+    <th>Persen</th>
+  </tr>
+  <tr>
+    <td>Apel</td>
+    <td>{{ proportionFrom1000Samples[0] }}</td>
+    <td>{{ percentFrom1000Samples[0] }}%</td>
+  </tr>
+  <tr>
+    <td>Jeruk</td>
+    <td>{{ proportionFrom1000Samples[1] }}</td>
+    <td>{{ percentFrom1000Samples[1] }}%</td>
+  </tr>
+</table>
