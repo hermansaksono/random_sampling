@@ -73,7 +73,7 @@
   Mari mencoba mengambil 1000 sampel dari satu truk. Mulai dengan Truk A yang berisi
   {{ subgroupSizes[0] | number :'2.0-2':'id'}} buah ({{subgroupRatios[0] * 100}}% dari keseluruhan buah yang dikirim).
 </p>
-<button (click)="onSampleTruckAOnly()">Ambil sampel dari truk A</button>
+<button (click)="onSampleTruckAOnly()">Ambil sampel dari Truk A</button>
 <h3>Bagaimana hasilnya?</h3>
 <table>
   <tr>
@@ -93,6 +93,12 @@
     <td>{{ truckASamples[1] }}</td>
     <td>{{ truckAPercents[1] }}%</td>
     <td>44%</td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>{{ truckASamples[0]+truckASamples[1] }}</td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
@@ -124,6 +130,12 @@
     <td>{{ truckBPercents[1] }}%</td>
     <td>44%</td>
   </tr>
+  <tr>
+    <td>Total</td>
+    <td>{{ truckBSamples[0]+truckBSamples[1] }}</td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
 
 <hr />
@@ -152,6 +164,12 @@
     <td>{{ truckCSamples[1] }}</td>
     <td>{{ truckCPercents[1] }}%</td>
     <td>44%</td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>{{ truckCSamples[0]+truckCSamples[1] }}</td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
@@ -192,6 +210,15 @@
     <td>{{ uniformPercents[1] }}%</td>
     <td>44%</td>
   </tr>
+  <tr>
+    <td>Total</td>
+    <td>{{ uniformSamples[0][0]+uniformSamples[0][1] }}</td>
+    <td>{{ uniformSamples[1][0]+uniformSamples[1][1] }}</td>
+    <td>{{ uniformSamples[2][0]+uniformSamples[2][1] }}</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
 
 <hr />
@@ -230,6 +257,15 @@
     <td>{{ stratifiedSamplesTotal[1] }}</td>
     <td>{{ stratifiedPercents[1] }}%</td>
     <td>44%</td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>{{ stratifiedSamples[0][0]+stratifiedSamples[0][1] }}</td>
+    <td>{{ stratifiedSamples[1][0]+stratifiedSamples[1][1] }}</td>
+    <td>{{ stratifiedSamples[2][0]+stratifiedSamples[2][1] }}</td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
