@@ -1,6 +1,6 @@
 <h1>Sampel Acak Berjenjang</h1>
 <p>
-  Kadang-kadang sumber data tidak sederhana. Di sini kita akan mempelajari <i>stratified random sampling</i>.
+  Kadang-kadang sumber data tidak sederhana. Di sini kita akan mencoba-coba <i>stratified random sampling</i>.
 </p>
 
 <hr />
@@ -19,7 +19,9 @@
 </ul>
 <p>
   Wati ingin memastikan apakah dia mendapatkan kurang lebih {{ applePopSize | number :'2.0-2':'id'}} apel
-  dan {{ orangePopSize | number :'2.0-2':'id'}}. Karena random sampling cukup akurat, apa yang harus dilakukan Wati?
+  dan {{ orangePopSize | number :'2.0-2':'id'}} jeruk. Kita tahu bahwa <a routerLink='/simple_random'>sampel
+  acak (random sampling)</a> dari satu sumber cukup akurat. Tapi bagaimana kalau sumbernya tidak lagi satu,
+  melainkan tiga truk DAN Wati tidak tahu apakah isi truk itu seragam? Apa yang harus dilakukan Wati?
 </p>
 <h3>Apa yang harus dilakukan Wati Pinguin?</h3>
 <p>
@@ -32,7 +34,10 @@
 <label><input type="radio" name="samplingMethod" /> Ambil total 1000 sampel yang proposional dengan isi truk</label>
 
 <h3>Pada kenyataannya</h3>
-<p>Walaupun Wati tidak tahu ada berapa apel dan jeruk di tiap truk, kita tahu isi tiap truk.</p>
+<p>
+  Walaupun Wati tidak tahu ada berapa apel dan jeruk di tiap truk, kami (sebagai pembuat simulasi) tahu isi tiap truk. Perhatikan jumlah apel dan
+  jeruk di tiap truk tidak sama. Truk A lebih banyak jeruk. Truk B lebih banyak apel. Truk C 50% apel dan 50% jeruk.
+</p>
 <table>
   <tr>
     <th></th>
@@ -96,7 +101,7 @@
   </tr>
   <tr>
     <td>Total</td>
-    <td>{{ truckASamples[0]+truckASamples[1] }}</td>
+    <td>{{ truckASamples[0]+truckASamples[1] ? truckASamples[0]+truckASamples[1] : "" }}</td>
     <td></td>
     <td></td>
   </tr>
@@ -130,9 +135,9 @@
     <td>{{ truckBPercents[1] }}%</td>
     <td>44%</td>
   </tr>
-  <tr>
+    <tr>
     <td>Total</td>
-    <td>{{ truckBSamples[0]+truckBSamples[1] }}</td>
+    <td>{{ truckBSamples[0]+truckBSamples[1] ? truckBSamples[0]+truckBSamples[1] : "" }}</td>
     <td></td>
     <td></td>
   </tr>
@@ -165,9 +170,9 @@
     <td>{{ truckCPercents[1] }}%</td>
     <td>44%</td>
   </tr>
-  <tr>
+    <tr>
     <td>Total</td>
-    <td>{{ truckCSamples[0]+truckCSamples[1] }}</td>
+    <td>{{ truckCSamples[0]+truckCSamples[1] ? truckCSamples[0]+truckCSamples[1] : "" }}</td>
     <td></td>
     <td></td>
   </tr>
@@ -178,7 +183,8 @@
 <h2>3. Mengambil sampel yang jumlahnya sama untuk ketiga truk</h2>
 <p>
   Bagaimana kalau kita ambil sampel dari ke-tiga truk? Oleh karena ada 3 truk, mari mencoba mengambil sama rata.
-  Tepatnya, masing-masing 333 sampel dari Truk A, B, & C.
+  Tepatnya, masing-masing 333 sampel dari Truk A, B, & C. (Khusus untuk Truk A, sampelnya 334 supaya jumlahnya tepat
+  1000 sampel).
 </p>
 <button (click)="onSampleUniformly()">Ambil rata dari Truk A, B, &amp; C</button>
 <h3>Bagaimana hasilnya?</h3>
@@ -212,10 +218,10 @@
   </tr>
   <tr>
     <td>Total</td>
-    <td>{{ uniformSamples[0][0]+uniformSamples[0][1] }}</td>
+    <td>{{ uniformSamples[0] ? uniformSamples[0][0]+uniformSamples[0][1] : ""}}</td>
     <td>{{ uniformSamples[1][0]+uniformSamples[1][1] }}</td>
     <td>{{ uniformSamples[2][0]+uniformSamples[2][1] }}</td>
-    <td></td>
+    <td>{{ uniformSamplesTotal[0]+uniformSamplesTotal[1] }}</td>
     <td></td>
     <td></td>
   </tr>
@@ -226,9 +232,9 @@
 <h2>4. Mengambil sampel yang proporsional dari ketiga truk</h2>
 <p>
   Bagaimana kalau kita ambil sampel dari ketiga truk, TAPI jumlah sampel dari tiap truk menyesuaikan isi truk? Oleh
-  karena ada 3 truk, mari mencoba mengambil 100 dari Truk A, 600 dari Truk B, dan 300 dari Truk C.
+  karena ada 3 truk yang berbeda persentase buahnya, mari mencoba mengambil 100 dari Truk A (10%), 600 dari Truk B (60%), dan 300 dari Truk C (30%).
 </p>
-<button (click)="onSampleProportionally()">Ambil 1000 sampel proporsional</button>
+<button (click)="onSampleProportionally()">Ambil proporsional</button>
 <h3>Bagaimana hasilnya?</h3>
 <table>
   <tr>
@@ -263,7 +269,11 @@
     <td>{{ stratifiedSamples[0][0]+stratifiedSamples[0][1] }}</td>
     <td>{{ stratifiedSamples[1][0]+stratifiedSamples[1][1] }}</td>
     <td>{{ stratifiedSamples[2][0]+stratifiedSamples[2][1] }}</td>
-    <td></td>
+    <td>
+      {{ stratifiedSamples[0][0]+stratifiedSamples[0][1]
+    + stratifiedSamples[1][0]+stratifiedSamples[1][1]
+    + stratifiedSamples[2][0]+stratifiedSamples[2][1]}}
+    </td>
     <td></td>
     <td></td>
   </tr>
@@ -278,12 +288,17 @@
     Perhatikan bila kita ambil 1000 sampel dari 1 truk saja, persentase yang kita dapatkan adalah persentase truk itu.
     Bukan persentase total buah yang dipesan.
     <br/>
+    <br/>
   </li>
   <li>
     <b>Mengapa persentasenya tetap meleset kalau kita ambil sampel yang rata dari ketiga truk?</b>
     <br/>
-    Bila kita ambil sampel sama rata dari setiap truk tanpa mempertimbangkan proporsi buah pada tiap truk, hasilnya
-    juga masih meleset. Artinya, pengambilan sampel tidak representatif.
+    Bila sampel yang diambil rata dari ketiga truk, hasilnya tidak mewakili kenyataan. Misalnya, truk A isinya 10% dari
+    keseluruhan 100.000 buah yang dipesan Wati. Jika kita ambil 334 sampel buah-buahan, maka truk A mewakili 33,4% dari
+    1000 sampel total. Padahal truk A hanya mewakili 10% dari keseluruhan buah-buahan. 33,4% jauh lebih tinggi daripada
+    10%. Akibatnya hasil perhitungannya meleset. Dengan kata lain, pengambilan sampel merata tidak
+    mewakili/representatif.
+    <br/>
     <br/>
   </li>
   <li>
@@ -291,6 +306,7 @@
     <br/>
     Perhatikan bila kita ambil sampel proporsional, hasilnya mirip dengan hasil pengambilan sampel acak sederhana yang
     dilakukan Wati untuk total buah yang tercampur dalam satu kotak saja.
+    <br/>
     <br/>
   </li>
 </ol>
@@ -300,3 +316,5 @@
   percobaan ini adalah hasil komputasi komputer/smartphone Anda sendiri. Kode programnya
   <a href="https://github.com/hermansaksono/random_sampling/blob/master/src/app/stratified-random/stratified-random.component.ts">bisa dilihat di sini</a>.
 </p>
+<p>
+  Untuk melihat pembahasan mengenai pengambilan sampel acak sederhana <a href="https://hermansaksono.github.io/random_sampling/simple_random">bisa dilihat di sini</a>

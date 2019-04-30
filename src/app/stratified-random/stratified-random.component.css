@@ -1,3 +1,7 @@
+body {
+    touch-action: manipulation;
+}
+
 h1 {
     color: #473793;
     font-family: Montserrat, Lato, Arial, Helvetica, sans-serif;
