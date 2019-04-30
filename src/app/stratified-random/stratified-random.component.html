@@ -218,10 +218,10 @@
   </tr>
   <tr>
     <td>Total</td>
-    <td>{{ uniformSamples[0] ? uniformSamples[0][0]+uniformSamples[0][1] : ""}}</td>
-    <td>{{ uniformSamples[1][0]+uniformSamples[1][1] }}</td>
-    <td>{{ uniformSamples[2][0]+uniformSamples[2][1] }}</td>
-    <td>{{ uniformSamplesTotal[0]+uniformSamplesTotal[1] }}</td>
+    <td>{{ uniformSamples[0][0]+uniformSamples[0][1] ? uniformSamples[0][0]+uniformSamples[0][1] : ""}}</td>
+    <td>{{ uniformSamples[1][0]+uniformSamples[1][1] ? uniformSamples[1][0]+uniformSamples[1][1] : ""}}</td>
+    <td>{{ uniformSamples[2][0]+uniformSamples[2][1] ? uniformSamples[2][0]+uniformSamples[2][1] : ""}}</td>
+    <td>{{ uniformSamplesTotal[0]+uniformSamplesTotal[1] ? uniformSamplesTotal[0]+uniformSamplesTotal[1] : ""}</td>
     <td></td>
     <td></td>
   </tr>
@@ -266,14 +266,10 @@
   </tr>
   <tr>
     <td>Total</td>
-    <td>{{ stratifiedSamples[0][0]+stratifiedSamples[0][1] }}</td>
-    <td>{{ stratifiedSamples[1][0]+stratifiedSamples[1][1] }}</td>
-    <td>{{ stratifiedSamples[2][0]+stratifiedSamples[2][1] }}</td>
-    <td>
-      {{ stratifiedSamples[0][0]+stratifiedSamples[0][1]
-    + stratifiedSamples[1][0]+stratifiedSamples[1][1]
-    + stratifiedSamples[2][0]+stratifiedSamples[2][1]}}
-    </td>
+    <td>{{ stratifiedSamples[0][0]+stratifiedSamples[0][1] ? stratifiedSamples[0][0]+stratifiedSamples[0][1] : ""}}</td>
+    <td>{{ stratifiedSamples[1][0]+stratifiedSamples[1][1] ? stratifiedSamples[1][0]+stratifiedSamples[1][1] : ""}}</td>
+    <td>{{ stratifiedSamples[2][0]+stratifiedSamples[2][1] ? stratifiedSamples[2][0]+stratifiedSamples[2][1] : ""}}</td>
+    <td>{{ stratifiedSamplesTotal[0]+stratifiedSamplesTotal[1] ? stratifiedSamplesTotal[0]+stratifiedSamplesTotal[1] : ""}}</td>
     <td></td>
     <td></td>
   </tr>
