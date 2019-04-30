@@ -1,0 +1,198 @@
+<h1>Stratified Random Sampling</h1>
+<p>
+  Kadang-kadang sumber data tidak sederhana. Di sini kita akan mempelajari <i>stratified random sampling</i>.
+</p>
+
+<hr />
+
+<h2>1. Permasalahan</h2>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Truk {{ truckNames[0] }}</th>
+    <th>Truk {{ truckNames[1] }}</th>
+    <th>Truk {{ truckNames[2] }}</th>
+    <th>Total</th>
+  </tr>
+  <tr>
+    <td>Apel</td>
+    <td>{{ subgroupContentsProportions[0][0] }}</td>
+    <td>{{ subgroupContentsProportions[1][0] }}</td>
+    <td>{{ subgroupContentsProportions[2][0] }}</td>
+    <td>{{ applePopSize }}</td>
+  </tr>
+  <tr>
+    <td>Jeruk</td>
+    <td>{{ subgroupContentsProportions[0][1] }}</td>
+    <td>{{ subgroupContentsProportions[1][1] }}</td>
+    <td>{{ subgroupContentsProportions[2][1] }}</td>
+    <td>{{ orangePopSize }}</td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>{{ subgroupSizes[0] }}</td>
+    <td>{{ subgroupSizes[1] }}</td>
+    <td>{{ subgroupSizes[2] }}</td>
+    <td>{{ populationSize }}</td>
+  </tr>
+</table>
+
+<hr />
+
+<h2>2. Mengambil dari satu truk saja</h2>
+<button (click)="onSampleTruckAOnly()">Ambil 1000 sampel dari truk A</button>
+<h3>Bagaimana hasilnya?</h3>
+<table>
+  <tr>
+    <th></th>
+    <th>Sampel Truk {{ truckNames[0] }}</th>
+    <th>Persen</th>
+    <th>Persen seharusnya</th>
+  </tr>
+  <tr>
+    <td>Apel</td>
+    <td>{{ truckASamples[0] }}</td>
+    <td>{{ truckAPercents[0] }}%</td>
+    <td>56%</td>
+  </tr>
+  <tr>
+    <td>Jeruk</td>
+    <td>{{ truckASamples[1] }}</td>
+    <td>{{ truckAPercents[1] }}%</td>
+    <td>44%</td>
+  </tr>
+</table>
+
+<hr />
+
+<button (click)="onSampleTruckBOnly()">Ambil 1000 sampel dari Truk B</button>
+<h3>Bagaimana hasilnya?</h3>
+<table>
+  <tr>
+    <th></th>
+    <th>Sampel Truk {{ truckNames[1] }}</th>
+    <th>Persen</th>
+    <th>Persen seharusnya</th>
+  </tr>
+  <tr>
+    <td>Apel</td>
+    <td>{{ truckBSamples[0] }}</td>
+    <td>{{ truckBPercents[0] }}%</td>
+    <td>56%</td>
+  </tr>
+  <tr>
+    <td>Jeruk</td>
+    <td>{{ truckBSamples[1] }}</td>
+    <td>{{ truckBPercents[1] }}%</td>
+    <td>44%</td>
+  </tr>
+</table>
+
+<hr />
+
+<button (click)="onSampleTruckCOnly()">Ambil 1000 sampel dari Truk C</button>
+<h3>Bagaimana hasilnya?</h3>
+<table>
+  <tr>
+    <th></th>
+    <th>Sampel Truk {{ truckNames[2] }}</th>
+    <th>Persen</th>
+    <th>Persen seharusnya</th>
+  </tr>
+  <tr>
+    <td>Apel</td>
+    <td>{{ truckCSamples[0] }}</td>
+    <td>{{ truckCPercents[0] }}%</td>
+    <td>56%</td>
+  </tr>
+  <tr>
+    <td>Jeruk</td>
+    <td>{{ truckCSamples[1] }}</td>
+    <td>{{ truckCPercents[1] }}%</td>
+    <td>44%</td>
+  </tr>
+</table>
+
+<hr />
+
+<h2>3. Mengambil sampel yang jumlahnya sama untuk ketiga truk</h2>
+
+<button (click)="onSampleUniformly()">Ambil 1000 sampel dari Truk A, B, & C</button>
+<h3>Bagaimana hasilnya?</h3>
+<table>
+  <tr>
+    <th></th>
+    <th>Truk {{ truckNames[0] }}</th>
+    <th>Truk {{ truckNames[1] }}</th>
+    <th>Truk {{ truckNames[2] }}</th>
+    <th>Total Sampel</th>
+    <th>Persen</th>
+    <th>Persen seharusnya</th>
+  </tr>
+  <tr>
+    <td>Apel</td>
+    <td>{{ uniformSamples[0][0] }}</td>
+    <td>{{ uniformSamples[1][0] }}</td>
+    <td>{{ uniformSamples[2][0] }}</td>
+    <td>{{ uniformSamplesTotal[0] }}</td>
+    <td>{{ uniformPercents[0] }}%</td>
+    <td>56%</td>
+  </tr>
+  <tr>
+    <td>Jeruk</td>
+    <td>{{ uniformSamples[0][1] }}</td>
+    <td>{{ uniformSamples[1][1] }}</td>
+    <td>{{ uniformSamples[2][1] }}</td>
+    <td>{{ uniformSamplesTotal[1] }}</td>
+    <td>{{ uniformPercents[1] }}%</td>
+    <td>44%</td>
+  </tr>
+</table>
+
+<hr />
+
+<h2>4. Mengambil sampel yang proporsional dari ketiga truk</h2>
+<p>
+  100 dari Truk A, 600 dari Truk B, dan 300 dari Truk C.
+</p>
+<button (click)="onSampleProportionally()">Ambil 1000 sampel proporsional</button>
+<h3>Bagaimana hasilnya?</h3>
+<table>
+  <tr>
+    <th></th>
+    <th>Truk {{ truckNames[0] }}</th>
+    <th>Truk {{ truckNames[1] }}</th>
+    <th>Truk {{ truckNames[2] }}</th>
+    <th>Total Sampel</th>
+    <th>Persen</th>
+    <th>Persen seharusnya</th>
+  </tr>
+  <tr>
+    <td>Apel</td>
+    <td>{{ stratifiedSamples[0][0] }}</td>
+    <td>{{ stratifiedSamples[1][0] }}</td>
+    <td>{{ stratifiedSamples[2][0] }}</td>
+    <td>{{ stratifiedSamplesTotal[0] }}</td>
+    <td>{{ stratifiedPercents[0] }}%</td>
+    <td>56%</td>
+  </tr>
+  <tr>
+    <td>Jeruk</td>
+    <td>{{ stratifiedSamples[0][1] }}</td>
+    <td>{{ stratifiedSamples[1][1] }}</td>
+    <td>{{ stratifiedSamples[2][1] }}</td>
+    <td>{{ stratifiedSamplesTotal[1] }}</td>
+    <td>{{ stratifiedPercents[1] }}%</td>
+    <td>44%</td>
+  </tr>
+</table>
+
+<hr />
+
+<h2>5. Catatan-catatan</h2>
+<ol>
+  <li>Mengapa persentasenya meleset kalau kita cuma mengambil dari satu truk?</li>
+  <li>Mengapa persentasenya tetap meleset kalau kita ambil sampel yang rata dari ketiga truk?</li>
+  <li>Mengapa persentasenya lebih akurat kalau kita sampel tiap truk diambil secara proporsional?</li>
+</ol>
