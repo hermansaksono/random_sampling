@@ -9,14 +9,6 @@ body {
     touch-action: manipulation;
 }
 
-h1 {
-    color: #473793;
-    font-family: Montserrat, Lato, Arial, Helvetica, sans-serif;
-    font-size: 250%;
-    text-align: left;
-    font-weight: 700;
-}
-
 p {
     margin: 1em 0;
 }

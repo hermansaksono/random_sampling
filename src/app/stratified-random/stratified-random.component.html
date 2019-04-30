@@ -1,4 +1,4 @@
-<h1>Stratified Random Sampling</h1>
+<h1>Sampel Acak Berjenjang</h1>
 <p>
   Kadang-kadang sumber data tidak sederhana. Di sini kita akan mempelajari <i>stratified random sampling</i>.
 </p>
@@ -6,7 +6,33 @@
 <hr />
 
 <h2>1. Permasalahan</h2>
+<p>
+  Wati Pinguin kembali memesan {{ populationSize | number :'2.0-2':'id'}} buah-buahan. Tepatnya,
+  {{ applePopSize | number :'2.0-2':'id'}} apel dan {{ orangePopSize | number :'2.0-2':'id'}} jeruk. Namun kali ini,
+  buah-buahannya dikirim dari 3 truk dari tiga desa. Setelah ketiga truk sampai, ternyata tiap truk membawa buah-buahan
+  yang jumlahnya berbeda-beda:
+</p>
+<ul>
+  <li>Truk {{ truckNames[0] }}: {{ subgroupSizes[0] | number :'2.0-2':'id'}} buah ({{subgroupRatios[0] * 100}}%)</li>
+  <li>Truk {{ truckNames[1] }}: {{ subgroupSizes[1] | number :'2.0-2':'id'}} buah ({{subgroupRatios[1] * 100}}%)</li>
+  <li>Truk {{ truckNames[2] }}: {{ subgroupSizes[2] | number :'2.0-2':'id'}} buah ({{subgroupRatios[2] * 100}}%)</li>
+</ul>
+<p>
+  Wati ingin memastikan apakah dia mendapatkan kurang lebih {{ applePopSize | number :'2.0-2':'id'}} apel
+  dan {{ orangePopSize | number :'2.0-2':'id'}}. Karena random sampling cukup akurat, apa yang harus dilakukan Wati?
+</p>
+<h3>Apa yang harus dilakukan Wati Pinguin?</h3>
+<p>
+  Jika Anda adalah Wati, langkah apa yang Anda lakukan? (Boleh pilih salah satu).
+</p>
+<label><input type="radio" name="samplingMethod" /> Ambil 1000 sampel dari salah satu truk saja</label>
+<br/>
+<label><input type="radio" name="samplingMethod" /> Ambil total 1000 sampel yang jumlahnya sama dari setiap truk</label>
+<br/>
+<label><input type="radio" name="samplingMethod" /> Ambil total 1000 sampel yang proposional dengan isi truk</label>
 
+<h3>Pada kenyataannya</h3>
+<p>Walaupun Wati tidak tahu ada berapa apel dan jeruk di tiap truk, kita tahu isi tiap truk.</p>
 <table>
   <tr>
     <th></th>
@@ -38,10 +64,16 @@
   </tr>
 </table>
 
+<p>Di bagian berikutnya, kita akan mencoba ketiga cara mengambil sampel yang diuraikan di atas. </p>
+
 <hr />
 
-<h2>2. Mengambil dari satu truk saja</h2>
-<button (click)="onSampleTruckAOnly()">Ambil 1000 sampel dari truk A</button>
+<h2>2. Mengambil dari salah satu truk saja</h2>
+<p>
+  Mari mencoba mengambil 1000 sampel dari satu truk. Mulai dengan Truk A yang berisi
+  {{ subgroupSizes[0] | number :'2.0-2':'id'}} buah ({{subgroupRatios[0] * 100}}% dari keseluruhan buah yang dikirim).
+</p>
+<button (click)="onSampleTruckAOnly()">Ambil sampel dari truk A</button>
 <h3>Bagaimana hasilnya?</h3>
 <table>
   <tr>
@@ -64,9 +96,14 @@
   </tr>
 </table>
 
-<hr />
+<hr/>
 
-<button (click)="onSampleTruckBOnly()">Ambil 1000 sampel dari Truk B</button>
+<p>
+  Sekarang coba ambil 1000 sampel dari Truk B. Truk ini isinya
+  {{ subgroupSizes[1] | number :'2.0-2':'id'}} buah ({{subgroupRatios[1] * 100}}% dari keseluruhan buah yang dikirim).
+</p>
+
+<button (click)="onSampleTruckBOnly()">Ambil sampel dari Truk B</button>
 <h3>Bagaimana hasilnya?</h3>
 <table>
   <tr>
@@ -91,7 +128,11 @@
 
 <hr />
 
-<button (click)="onSampleTruckCOnly()">Ambil 1000 sampel dari Truk C</button>
+<p>
+  Sekali lagi. Sekarang coba ambil 1000 sampel dari Truk C. Truk C berisi
+  {{ subgroupSizes[2] | number :'2.0-2':'id'}} buah ({{subgroupRatios[2] * 100}}% dari keseluruhan buah yang dikirim).
+</p>
+<button (click)="onSampleTruckCOnly()">Ambil sampel dari Truk C</button>
 <h3>Bagaimana hasilnya?</h3>
 <table>
   <tr>
@@ -117,8 +158,11 @@
 <hr />
 
 <h2>3. Mengambil sampel yang jumlahnya sama untuk ketiga truk</h2>
-
-<button (click)="onSampleUniformly()">Ambil 1000 sampel dari Truk A, B, & C</button>
+<p>
+  Bagaimana kalau kita ambil sampel dari ke-tiga truk? Oleh karena ada 3 truk, mari mencoba mengambil sama rata.
+  Tepatnya, masing-masing 333 sampel dari Truk A, B, & C.
+</p>
+<button (click)="onSampleUniformly()">Ambil rata dari Truk A, B, &amp; C</button>
 <h3>Bagaimana hasilnya?</h3>
 <table>
   <tr>
@@ -154,7 +198,8 @@
 
 <h2>4. Mengambil sampel yang proporsional dari ketiga truk</h2>
 <p>
-  100 dari Truk A, 600 dari Truk B, dan 300 dari Truk C.
+  Bagaimana kalau kita ambil sampel dari ketiga truk, TAPI jumlah sampel dari tiap truk menyesuaikan isi truk? Oleh
+  karena ada 3 truk, mari mencoba mengambil 100 dari Truk A, 600 dari Truk B, dan 300 dari Truk C.
 </p>
 <button (click)="onSampleProportionally()">Ambil 1000 sampel proporsional</button>
 <h3>Bagaimana hasilnya?</h3>
@@ -192,7 +237,30 @@
 
 <h2>5. Catatan-catatan</h2>
 <ol>
-  <li>Mengapa persentasenya meleset kalau kita cuma mengambil dari satu truk?</li>
-  <li>Mengapa persentasenya tetap meleset kalau kita ambil sampel yang rata dari ketiga truk?</li>
-  <li>Mengapa persentasenya lebih akurat kalau kita sampel tiap truk diambil secara proporsional?</li>
+  <li>
+    <b>Mengapa persentasenya meleset kalau kita cuma mengambil dari satu truk?</b><br/>
+    Perhatikan bila kita ambil 1000 sampel dari 1 truk saja, persentase yang kita dapatkan adalah persentase truk itu.
+    Bukan persentase total buah yang dipesan.
+    <br/>
+  </li>
+  <li>
+    <b>Mengapa persentasenya tetap meleset kalau kita ambil sampel yang rata dari ketiga truk?</b>
+    <br/>
+    Bila kita ambil sampel sama rata dari setiap truk tanpa mempertimbangkan proporsi buah pada tiap truk, hasilnya
+    juga masih meleset. Artinya, pengambilan sampel tidak representatif.
+    <br/>
+  </li>
+  <li>
+    <b>Mengapa persentasenya lebih mendekati kenyataan kalau kita sampel tiap truk diambil secara proporsional?</b>
+    <br/>
+    Perhatikan bila kita ambil sampel proporsional, hasilnya mirip dengan hasil pengambilan sampel acak sederhana yang
+    dilakukan Wati untuk total buah yang tercampur dalam satu kotak saja.
+    <br/>
+  </li>
 </ol>
+
+<p>
+  Pengambilan acak pada percobaan ini dihitung oleh komputer/smartphone Anda. Jadi, apel atau jeruk yang didapat dalam
+  percobaan ini adalah hasil komputasi komputer/smartphone Anda sendiri. Kode programnya
+  <a href="https://github.com/hermansaksono/random_sampling/blob/master/src/app/stratified-random/stratified-random.component.ts">bisa dilihat di sini</a>.
+</p>

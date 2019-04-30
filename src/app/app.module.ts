@@ -1,5 +1,9 @@
 import {BrowserModule, Title} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeIndonesian from '@angular/common/locales/id';
+
+registerLocaleData(localeIndonesian, 'id');
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

@@ -1,0 +1,45 @@
+h1 {
+    color: #473793;
+    font-family: Montserrat, Lato, Arial, Helvetica, sans-serif;
+    font-size: 250%;
+    text-align: left;
+    font-weight: 700;
+}
+
+h2, h3 {
+    color: #3151b7;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+input[type="text"], button {
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    padding: 0.4em 0.8em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid darkgray;
+}
+
+th {
+    font-weight: bolder;
+    padding: 0.3em 0.8em;
+    font-size: 10pt;
+    text-transform: uppercase;
+    border-bottom: 2px solid darkgray;
+}
+
+td {
+    padding: 0.4em 0.8em;
+    vertical-align: middle;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid darkgray;
+}
