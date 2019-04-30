@@ -21,7 +21,7 @@
   Wati ingin memastikan apakah dia mendapatkan kurang lebih {{ applePopSize | number :'2.0-2':'id'}} apel
   dan {{ orangePopSize | number :'2.0-2':'id'}} jeruk. Kita tahu bahwa <a routerLink='/simple_random'>sampel
   acak (random sampling)</a> dari satu sumber cukup akurat. Tapi bagaimana kalau sumbernya tidak lagi satu,
-  melainkan tiga truk DAN kita tidak tahu apakah isi truk itu seragam? Apa yang harus dilakukan Wati?
+  melainkan tiga truk DAN Wati tidak tahu apakah isi truk itu seragam? Apa yang harus dilakukan Wati?
 </p>
 <h3>Apa yang harus dilakukan Wati Pinguin?</h3>
 <p>
@@ -35,7 +35,7 @@
 
 <h3>Pada kenyataannya</h3>
 <p>
-  Walaupun Wati tidak tahu ada berapa apel dan jeruk di tiap truk, kita tahu isi tiap truk. Perhatikan jumlah apel dan
+  Walaupun Wati tidak tahu ada berapa apel dan jeruk di tiap truk, kami (sebagai pembuat simulasi) tahu isi tiap truk. Perhatikan jumlah apel dan
   jeruk di tiap truk tidak sama. Truk A lebih banyak jeruk. Truk B lebih banyak apel. Truk C 50% apel dan 50% jeruk.
 </p>
 <table>
@@ -176,7 +176,6 @@
     <td></td>
     <td></td>
   </tr>
-
 </table>
 
 <hr />
@@ -219,10 +218,10 @@
   </tr>
   <tr>
     <td>Total</td>
-    <td>{{ uniformSamples[0] ? uniformSamples[0][0]+uniformSamples[0][1] : "--"}}</td>
+    <td>{{ uniformSamples[0] ? uniformSamples[0][0]+uniformSamples[0][1] : ""}}</td>
     <td>{{ uniformSamples[1][0]+uniformSamples[1][1] }}</td>
     <td>{{ uniformSamples[2][0]+uniformSamples[2][1] }}</td>
-    <td></td>
+    <td>{{ uniformSamplesTotal[0]+uniformSamplesTotal[1] }}</td>
     <td></td>
     <td></td>
   </tr>
@@ -233,7 +232,7 @@
 <h2>4. Mengambil sampel yang proporsional dari ketiga truk</h2>
 <p>
   Bagaimana kalau kita ambil sampel dari ketiga truk, TAPI jumlah sampel dari tiap truk menyesuaikan isi truk? Oleh
-  karena ada 3 truk, mari mencoba mengambil 100 dari Truk A, 600 dari Truk B, dan 300 dari Truk C.
+  karena ada 3 truk yang berbeda persentase buahnya, mari mencoba mengambil 100 dari Truk A (10%), 600 dari Truk B (60%), dan 300 dari Truk C (30%).
 </p>
 <button (click)="onSampleProportionally()">Ambil proporsional</button>
 <h3>Bagaimana hasilnya?</h3>
@@ -317,6 +316,6 @@
   percobaan ini adalah hasil komputasi komputer/smartphone Anda sendiri. Kode programnya
   <a href="https://github.com/hermansaksono/random_sampling/blob/master/src/app/stratified-random/stratified-random.component.ts">bisa dilihat di sini</a>.
 </p>
-<a href="https://hermansaksono.github.io/random_sampling/simple_random">
-<button>Sampel Acak Sederhana</button>
-</a>
+<p>
+  Untuk melihat pembahasan mengenai pengambilan sampel acak sederhana <a routerLink='/simple_random'>bisa dilihat di sini</a>
+</p>
