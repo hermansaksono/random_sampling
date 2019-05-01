@@ -1,6 +1,7 @@
 <h1>Sampel Acak Berjenjang</h1>
 <p>
-  Kadang-kadang sumber data tidak sederhana. Di sini kita akan mencoba-coba <i>stratified random sampling</i>.
+  Kadang-kadang sumber data tidak sederhana. Misalnya, data berasal dari tiga sumber yang komposisinya beda satu dengan
+  yang lain. Di sini kita akan mencoba-coba <i>stratified random sampling</i>.
 </p>
 
 <hr />
@@ -17,6 +18,7 @@
   <li>Truk {{ truckNames[1] }}: {{ subgroupSizes[1] | number :'2.0-2':'id'}} buah ({{subgroupRatios[1] * 100}}%)</li>
   <li>Truk {{ truckNames[2] }}: {{ subgroupSizes[2] | number :'2.0-2':'id'}} buah ({{subgroupRatios[2] * 100}}%)</li>
 </ul>
+<p>
 <p>
   Wati ingin memastikan apakah dia mendapatkan kurang lebih {{ applePopSize | number :'2.0-2':'id'}} apel
   dan {{ orangePopSize | number :'2.0-2':'id'}} jeruk. Kita tahu bahwa <a routerLink='/simple_random'>sampel
@@ -226,7 +228,7 @@
     <td>{{ uniformSamples[0][0]+uniformSamples[0][1] ? uniformSamples[0][0]+uniformSamples[0][1] : ""}}</td>
     <td>{{ uniformSamples[1][0]+uniformSamples[1][1] ? uniformSamples[1][0]+uniformSamples[1][1] : ""}}</td>
     <td>{{ uniformSamples[2][0]+uniformSamples[2][1] ? uniformSamples[2][0]+uniformSamples[2][1] : ""}}</td>
-    <td>{{ uniformSamplesTotal[0]+uniformSamplesTotal[1] ? uniformSamplesTotal[0]+uniformSamplesTotal[1] : ""}</td>
+    <td>{{ uniformSamplesTotal[0]+uniformSamplesTotal[1] ? uniformSamplesTotal[0]+uniformSamplesTotal[1] : ""}}</td>
     <td></td>
     <td></td>
   </tr>
